@@ -10,8 +10,8 @@
 
 * Equate and return the sorted strings
 
-## Confidence Level
+## Understanding the Optimal Solution
 
-* High
-
-
+* Factor the lengths of the strings, if they are not equal they are automatically not anagrams
+* Initialise an array to track to changes in the occurence(s) of the letters
+* If any of the indices is not 0, then the two strings are not anagrams

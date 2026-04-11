@@ -1,12 +1,7 @@
 
 class Solution:
     def has_duplicate(self, nums: list[int]) -> bool:
-        already_seen = set()
-        for num in nums:
-            if num in already_seen:
-                return True
-            already_seen.add(num)
-        return False
+        return len(set(nums)) < len(nums)
 
 if __name__ == '__main__':
     solution = Solution()

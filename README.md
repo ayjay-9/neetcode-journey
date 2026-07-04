@@ -11,8 +11,8 @@ Structured NeetCode roadmap with clear explanations, pattern recognition, and op
 
 ## Progress
 
-* Arrays & Hashing:          2/9
-* Two Pointers:              0/5
+* Arrays & Hashing:          9/9
+* Two Pointers:              1/5
 * Sliding Window:            0/7
 * Stack:                     0/6
 * Binary Search:             0/7

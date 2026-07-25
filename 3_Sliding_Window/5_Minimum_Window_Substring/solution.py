@@ -3,34 +3,34 @@ from collections import defaultdict
 
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
-        # No substring will be found
-        if len(s) < len(t):
+        if t == "":
             return ""
 
-        chars = [0]*52 # Lower and uppercase
-        # Set the frequency for chars in t
-        for i in range(len(t)):
-            if t[i].islower():
-                chars[ ord(t[i]) - ord('a') ] += 1
-            else:
-                chars[ord(t[i]) - ord('A') + 26 ] += 1
+        countT, window = {}, {}
+        for c in t:
+            countT[c] = 1 + countT.get(c, 0)
 
-        left, window_len = 0, 0
-        indices = []
-        starting_index = 0
-        for right in range(len(s)):
-            # chars_check = chars
-            substring = s[left:right+1]
-            window_len = max(window_len, right-left+1)
-            if substring[right].islower(): # Lowercase
-                if chars[ord(substring[right]) - ord('a')]  >= 1:
-                    indices.append(right)
-                    chars[ord(substring[right]) - ord('a')] -= 1
-            else: # Uppercase
-                if chars[ord(substring[right]) - ord('A') + 26]  >= 1:
-                    indices.append(right)
-                    chars[ord(substring[right]) - ord('A') + 26] -= 1
-        return s[min(indices):max(indices)+1]
+        have, need = 0, len(countT)
+        res, resLen = [-1, -1], float("infinity")
+        l = 0
+        for r in range(len(s)):
+            c = s[r]
+            window[c] = 1 + window.get(c, 0)
+
+            if c in countT and window[c] == countT[c]:
+                have += 1
+
+            while have == need:
+                if (r - l + 1) < resLen:
+                    res = [l, r]
+                    resLen = r - l + 1
+
+                window[s[l]] -= 1
+                if s[l] in countT and window[s[l]] < countT[s[l]]:
+                    have -= 1
+                l += 1
+        l, r = res
+        return s[l: r + 1] if resLen != float("infinity") else ""
 
 
 

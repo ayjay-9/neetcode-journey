@@ -16,6 +16,7 @@ Structured NeetCode roadmap with clear explanations, pattern recognition, and op
 * Sliding Window:            7/7
 * Stack:                     6/6
 * Binary Search:             7/7
+* Linked List:               0/11
 * Trees:                     0/15
 * Heap/Priority Queue:       0/7
 * Backtracking:              0/10

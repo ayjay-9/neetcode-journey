@@ -10,24 +10,19 @@ class TreeNode:
 
 class Solution:
     def isSubtree(self, root: TreeNode, subRoot: TreeNode) -> bool:
-        def sameTree(a: TreeNode, b: TreeNode) -> bool:
-            if not a and not b:
-                return True
-            if not a or not b:
-                return False
-            if a.val != b.val:
-                return False
-            return sameTree(a.left, b.left) and sameTree(a.right, b.right)
+        def dfs(root):
+            if not root:
+                return "#"
 
-        def dfs(curr_root: TreeNode) -> bool:
-            if not curr_root:
-                return False
-            if sameTree(curr_root, subRoot):
-                return True
-            return dfs(curr_root.left) or dfs(curr_root.right)
+            return (
+                    "," + str(root.val) +
+                    dfs(root.left) +
+                    dfs(root.right)
+            )
 
-        return dfs(root)
-
+        return dfs(subRoot) in dfs(root) # E.g dfs(root) is (,1,2,4##,5##,3##) and dfs(subroot) is (,2,4##,5##)
+        # So subroot is in root
+        # Ex2: dfs(root) is (,1,2,4,6###,5##,3##) and dfs(subroot) is (,2,4##,5##)
 def build_tree(values):
     if not values:
         return None

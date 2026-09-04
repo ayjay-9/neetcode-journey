@@ -11,24 +11,24 @@ Structured NeetCode roadmap with clear explanations, pattern recognition, and op
 
 ## Progress
 
-* Arrays & Hashing:          9/9
-* Two Pointers:              5/5
-* Sliding Window:            7/7
-* Stack:                     6/6
-* Binary Search:             7/7
-* Linked List:               11/11
-* Trees:                     0/15
-* Heap/Priority Queue:       0/7
-* Backtracking:              0/10
-* Tries:                     0/3
-* Graphs:                    0/13
-* Advanced Graphs:           0/6
-* 1-D Dynamic Programming:   0/12
-* 2-D Dynamic Programming:   0/11
-* Greedy:                    0/8
-* Intervals:                 0/6
-* Math & Geometry:           0/8
-* Bit Manipulation:          0/7
+* Arrays & Hashing:          9/9 ✅
+* Two Pointers:              5/5 ✅
+* Sliding Window:            7/7 ✅
+* Stack:                     6/6 ✅
+* Binary Search:             7/7 ✅
+* Linked List:               11/11 ✅
+* Trees:                     7/15 ⌛
+* Heap/Priority Queue:       0/7 ⌛
+* Backtracking:              0/10 ⌛
+* Tries:                     0/3 ⌛
+* Graphs:                    0/13 ⌛
+* Advanced Graphs:           0/6 ⌛
+* 1-D Dynamic Programming:   0/12 ⌛
+* 2-D Dynamic Programming:   0/11 ⌛
+* Greedy:                    0/8 ⌛
+* Intervals:                 0/6 ⌛
+* Math & Geometry:           0/8 ⌛
+* Bit Manipulation:          0/7 ⌛
 
 ## Structure
 

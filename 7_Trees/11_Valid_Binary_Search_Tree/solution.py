@@ -11,19 +11,15 @@ class Solution:
     def isValidBST(self, root: TreeNode) -> bool:
         if not root:
             return True
+        def dfs(low, node: TreeNode, high):
+            if not node:
+                return True
 
-        q = deque([(float('-inf'), root, float('inf'))])
-        while q:
-            low, node, high = q.popleft()
-
-            if not low < node.val < high:
+            if not low <  node.val < high:
                 return False
 
-            if node.left:
-                q.append((low, node.left, node.val))
-            if node.right:
-                q.append((node.val, node.right, high))
-        return True
+            return dfs(low, node.left, node.val) and dfs(node.val, node.right, high)
+        return dfs(float('-inf'), root, float('inf'))
 
 def build_tree(values):
     if not values:
